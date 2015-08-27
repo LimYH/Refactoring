@@ -258,8 +258,9 @@ public class CityConnect {
 		String newStartLocation = parameters[PARAM_POSITION_START_LOCATION];
 		String newEndLocation = parameters[PARAM_POSITION_END_LOCATION];
 		String distance = parameters[PARAM_POSITION_DISTANCE];
-
-		if (!isPositiveNonZeroInt(distance)){
+		
+		// ##### Reverse Conditional #####
+		if (isPositiveNonZeroInt(distance)){
 			return String.format(MESSAGE_INVALID_FORMAT, userCommand);
 		}
 
@@ -322,14 +323,14 @@ public class CityConnect {
 				|| (startLocation1.equalsIgnoreCase(endLocation2) && endLocation1
 						.equalsIgnoreCase(startLocation2));
 	}
-
+	// ##### Reverse Conditional #####
 	private static boolean isPositiveNonZeroInt(String s) {
 		try {
 			int i = Integer.parseInt(s);
 			//return true if i is greater than 0
-			return (i > 0 ? true : false);
+			return (i > 0 ? false : true);
 		} catch (NumberFormatException nfe) {
-			return false;
+			return true;
 		}
 	}
 
