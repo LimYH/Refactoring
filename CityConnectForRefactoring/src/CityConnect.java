@@ -101,7 +101,8 @@ public class CityConnect {
 		showToUser(WELCOME_MESSAGE);
 		while (true) {
 			System.out.print("Enter command:");
-			showToUser(executeCommand(scanner.nextLine()));
+			// ##### Inline Method #####
+			System.out.println(executeCommand(scanner.nextLine()));
 		}
 	}
 
@@ -112,10 +113,12 @@ public class CityConnect {
 	 * that is referenced by the method above.
 	 * ====================================================================
 	 */
-
+	
+	// ##### Inline Method #####
+	/*
 	private static void showToUser(String text) {
 		System.out.println(text);
-	}
+	}*/
 
 	public static String executeCommand(String userCommand) {
 		if (userCommand.trim().equals(""))
