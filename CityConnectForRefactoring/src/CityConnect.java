@@ -219,6 +219,7 @@ public class CityConnect {
 	 * @return Returns the position of the route represented by 
 	 *    newStartLocation and newEndLocation. Returns NOT_FOUND if not found.
 	 */
+	// ##### Replace Nested Conditional with Guard Clauses #####
 	private static int  getPositionOfExistingRoute(String newStartLocation,
 			String newEndLocation) {
 		for (int i = 0; i < route.length; i++) {
@@ -228,7 +229,8 @@ public class CityConnect {
 
 			if (existing_start_location == null) { //beginning of empty slots
 				return NOT_FOUND; 
-			} else if (sameRoute(existing_start_location, existing_end_location,
+			} 
+			if (sameRoute(existing_start_location, existing_end_location,
 					newStartLocation, newEndLocation)) { 
 				return i;
 			}
