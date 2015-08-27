@@ -289,6 +289,7 @@ public class CityConnect {
 	 *   newStartLocation and newEndLocation. Returns SLOT_UNAVAILABLE if
 	 *   no suitable slot is found.
 	 */
+	// ##### Replace Nested Conditional with Guard Clauses #####
 	private static int location(String newStartLocation,
 			String newEndLocation) {
 		
@@ -299,7 +300,8 @@ public class CityConnect {
 
 			if (existingStartLocation == null) { // empty slot
 				return i;
-			} else if (sameRoute(existingStartLocation, existingEndLocation,
+			}
+			if (sameRoute(existingStartLocation, existingEndLocation,
 					newStartLocation, newEndLocation)) {
 				return i;
 			}
